@@ -7,11 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Read env
-        id: read-env
+      - name: Read yaml
+        id: read-yaml
         run: |
-#          debug
-          echo "::debug::Set the Octocat variable"
-          echo -n '::set-output name=data::'
-          source .env
-          echo $CR_REGISTRY
+          echo 'Hello'
+
