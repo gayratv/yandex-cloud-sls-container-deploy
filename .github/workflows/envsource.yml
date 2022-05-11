@@ -10,13 +10,8 @@ on:
 jobs:
   read-infra-config:
     runs-on: ubuntu-latest
-    outputs:
-      data: ${{ steps.read-yaml.outputs.data }}
     steps:
       - uses: actions/checkout@v3
-      - name: Set up yq
-        uses: frenck/action-setup-yq@v1
-      - name: Read yaml
         id: read-yaml
         run: |
 #          debug
