@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      -name: Прочитать .env
+      - name: Прочитать .env
         id: read-env
         run: |
 #          debug
