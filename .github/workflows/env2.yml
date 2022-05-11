@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Test2 show env files
+name: Testing env
 
 # Controls when the action will run.
 on:
