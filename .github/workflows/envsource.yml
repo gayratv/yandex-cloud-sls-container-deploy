@@ -1,18 +1,15 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Testing env
-
-# Controls when the action will run.
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   read-infra-config:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        id: read-yaml
+      - name: checkout
+        uses: actions/checkout@v3
+      -name: Прочитать .env
+        id: read-env
         run: |
 #          debug
           echo "::debug::Set the Octocat variable"
