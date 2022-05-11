@@ -1,0 +1,26 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test2 show env files
+
+# Controls when the action will run.
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  read-infra-config:
+    runs-on: ubuntu-latest
+    outputs:
+      data: ${{ steps.read-yaml.outputs.data }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up yq
+        uses: frenck/action-setup-yq@v1
+      - name: Read yaml
+        id: read-yaml
+        run: |
+#          debug
+          echo "::debug::Set the Octocat variable"
+          echo -n '::set-output name=data::'
+          source .env
+          echo $CR_REGISTRY
