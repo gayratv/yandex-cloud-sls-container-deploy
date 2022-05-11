@@ -3,12 +3,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  read-infra-config:
+  read-env-config:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Read yaml
-        id: read-yaml
+      - name: Прочитать env
+        id: read-env
         run: |
           echo 'Hello'
 
+#jobs:
+#  read-infra-config:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Read env
+#        id: read-env
+#        run: |
+#          #          debug
+#               echo "::debug::Set the Octocat variable"
+#               echo -n '::set-output name=data::'
+#               source .env
+#               echo $CR_REGISTRY
+#
